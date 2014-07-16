@@ -1,7 +1,0 @@
-/Users/willyaranda/workspace/proyectofinal/src/com/willy/pfm/stream/hbase/HBaseTableHelpers.java
-/Users/willyaranda/workspace/proyectofinal/src/com/willy/pfm/stream/AnalyzeUserBolt.java
-/Users/willyaranda/workspace/proyectofinal/src/com/willy/pfm/stream/AnalyzeTwitBolt.java
-/Users/willyaranda/workspace/proyectofinal/src/com/willy/pfm/stream/Fields.java
-/Users/willyaranda/workspace/proyectofinal/src/com/willy/pfm/stream/StreamTweetsSpout.java
-/Users/willyaranda/workspace/proyectofinal/src/com/willy/pfm/stream/TwitterStreamTopology.java
-/Users/willyaranda/workspace/proyectofinal/src/com/willy/pfm/stream/SaveUserBolt.java
