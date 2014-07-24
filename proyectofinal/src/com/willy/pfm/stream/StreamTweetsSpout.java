@@ -28,9 +28,9 @@ public final class StreamTweetsSpout extends BaseRichSpout implements
 	private FilterQuery query;
 	private String[] KEYWORDS = { "Justin Bieber", "Bieber", "@justinbieber",
 			"believers", "believer", "#beliebers" };
-	
+
 	private Integer counter = 0;
-	
+
 	private ArrayList<Status> statuses = new ArrayList<Status>();
 
 	@Override

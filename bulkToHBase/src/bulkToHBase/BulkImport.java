@@ -18,9 +18,9 @@ import com.google.protobuf.ServiceException;
 public class BulkImport {
 	private final static String USER_TABLE_NAME = "User";
 	private final static String TWEET_TABLE_NAME = "Tweet";
-	
+
 	public static void main(String[] args) throws IOException {
-		
+
 		ArrayList<Put> putsUsers = new ArrayList<>(1000);
 		ArrayList<Put> putsTweets = new ArrayList<>(1000);
 
@@ -28,7 +28,7 @@ public class BulkImport {
 		config.set("hbase.zookeeper.quorum", "54.73.134.90,54.220.28.67,54.216.40.161");
 		config.set("hbase.zookeeper.property.clientPort", "2181");
 		config.set("hbase.master", "54.73.137.63:60000");
-		
+
 		String csvFile = "/Users/willyaranda/Desktop/tweets/tweet-uniq-orig.csv";
 		BufferedReader br = null;
 		String line = "";
@@ -41,9 +41,9 @@ public class BulkImport {
 		}
 		HTable userTable = new HTable(config, USER_TABLE_NAME);
 		HTable tweetTable = new HTable(config, TWEET_TABLE_NAME);
-		
+
 		Integer counter = 0;
-		
+
 		try {
 			br = new BufferedReader(new FileReader(csvFile));
 			while ((line = br.readLine()) != null) {
@@ -55,7 +55,6 @@ public class BulkImport {
 					putsTweets.clear();
 					putsUsers.clear();
 				}
-				if (counter < 2520000) continue;
 				String[] data = line.split(cvsSplitBy);
 				String tweetId = data[0];
 				String text = data[1];
@@ -69,12 +68,12 @@ public class BulkImport {
 				p.add(Bytes.toBytes("isRetweet"), Bytes.toBytes("isRetweet"), Bytes.toBytes(isRetweet));
 				//tweetTable.put(p);
 				putsTweets.add(p);
-				
+
 				Put p2 = new Put(Bytes.toBytes(userId));
 				p2.add(Bytes.toBytes("username"), Bytes.toBytes("username"), Bytes.toBytes(userName));
 				//userTable.put(p2);
 				putsUsers.add(p2);
-			}	 
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
