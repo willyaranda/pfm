@@ -109,14 +109,6 @@ Las consultas para la creación de tablas está dentro del fichero
 `createTablesFromHbase.hql`, que deben ejecutarse en el CLI de Hive o bien
 dentro de Hue.
 
-### Consultas
-
-Dentro de hive están los diferentes ficheros `.hql` que se necesitan para ejecutar
-las consultas que se han realizado para el proyecto.
-
-Pueden copiar y pegarse, o bien ejecutarse como `hive -f fichero.hql`
-
-
 MongoDB a CSV
 -------------
 
